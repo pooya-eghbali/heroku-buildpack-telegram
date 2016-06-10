@@ -14,17 +14,12 @@ VENDOR_DIR="vendor"
 
 echo "-----> Install telegram"
 
-DOWNLOAD_URL="http://github.com/vysheng/tg/archive/1.3.1.tar.gz"
-
-echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
+git clone --recursive https://github.com/vysheng/tg.git && cd tg
 
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-curl -L --silent $DOWNLOAD_URL | tar xz
 
-echo "Build telegram-cli" | indent
-cd tg-1.3.1
 echo "Configure telegram-cli" | indent
 ./configure --disable-liblua
 echo "Make telegram-cli" | indent
