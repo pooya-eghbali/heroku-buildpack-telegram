@@ -26,7 +26,7 @@ curl -L --silent $DOWNLOAD_URL | tar xz
 echo "Build telegram-cli" | indent
 cd tg-1.3.1
 echo "Configure telegram-cli" | indent
-./configure
+./configure --disable-liblua
 echo "Make telegram-cli" | indent
 make
 
